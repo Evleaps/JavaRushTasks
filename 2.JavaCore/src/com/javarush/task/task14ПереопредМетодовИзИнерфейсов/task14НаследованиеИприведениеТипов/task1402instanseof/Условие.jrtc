@@ -1,0 +1,7 @@
+taskKey="com.javarush.task.task14ПереопредМетодовИзИнерфейсов.task14НаследованиеИприведениеТипов.task1402instanseof"
+
+Bingo-2!
+
+Исправь строчку 'Cat cat = new Cat();' так, чтобы программа вывела "Bingo!".
+
+

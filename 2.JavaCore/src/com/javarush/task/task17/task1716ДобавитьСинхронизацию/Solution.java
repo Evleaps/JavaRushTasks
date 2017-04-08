@@ -1,4 +1,4 @@
-package com.javarush.task.task17.task1716;
+package com.javarush.task.task17.task1716ДобавитьСинхронизацию;
 
 /* 
 Синхронизированные методы

@@ -1,4 +1,4 @@
-package com.javarush.task.task17.task1712;
+package com.javarush.task.task17.task1712_БОЛЬШАЯ_Задача_Ресторан_ОфициантПриноситЕдуПоварГотовит;
 
 import java.util.ArrayList;
 import java.util.List;

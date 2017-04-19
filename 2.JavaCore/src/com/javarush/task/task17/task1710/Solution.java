@@ -1,7 +1,6 @@
 package com.javarush.task.task17.task1710;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -50,24 +49,37 @@ public class Solution {
         allPeople.add(Person.createMale("Петров Петр", new Date()));  //сегодня родился    id=1
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         //start here - начни тут
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String option = reader.readLine();
-        options(option);
+        String argument = args[0];
+        switch (argument) {
+            case "-c":
+                Create(args[1],args[2],args[3]);
+                break;
+            case "-u":
+                Update(args[1],args[2],args[3],args[4]);
+                break;
+            case "-d":
+                Delite(args[1]);
+                break;
+            case "-i":
+                input(args[1]);
+
+        }
+
     }
 
-    public static void options(String option){
+    public static void Create(String name, String sex, String date) throws ParseException {
+        Date newFormat = new SimpleDateFormat("dd/MM/yyyy").parse(date);
+        allPeople.add(Person.createMale(name,sex,date))
+    }
+    public static void Update(String id,String name, String sex, String date) {
 
-        String LocalOption2;
-        String LocalOption3;
+    }
+    public static void Delite(String id) {
 
-        if (option.contains("-c")){
-            Object[] LocalOption1 = option.split("-c")[1].split(" ");
-           // allPeople.add(LocalOption1.toString(),LocalOption1[2])
-        }
-        else if (option.equals("-u"));
-        else if (option.equals("-d"));
-        else if (option.equals("-i"));
+    }
+    public static void input(String id) {
+
     }
 }

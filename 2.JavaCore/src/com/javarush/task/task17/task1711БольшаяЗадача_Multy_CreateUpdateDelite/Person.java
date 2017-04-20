@@ -1,4 +1,5 @@
-package com.javarush.task.task17.task1710;
+package com.javarush.task.task17.task1711БольшаяЗадача_Multy_CreateUpdateDelite;
+
 import java.util.Date;
 
 public class Person {

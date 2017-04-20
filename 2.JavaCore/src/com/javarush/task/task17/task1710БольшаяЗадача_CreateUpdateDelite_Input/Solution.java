@@ -1,9 +1,11 @@
-package com.javarush.task.task17.task1710;
+package com.javarush.task.task17.task1710БольшаяЗадача_CreateUpdateDelite_Input;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 /*
 CrUD — Create, Update, Delete
 
@@ -49,37 +51,52 @@ public class Solution {
         allPeople.add(Person.createMale("Петров Петр", new Date()));  //сегодня родился    id=1
     }
 
-    public static void main(String[] args) {
-        //start here - начни тут
+    public static void main(String[] args) throws ParseException {
+        //свитч ищет совпадения в переданном аргументе.
         String argument = args[0];
         switch (argument) {
             case "-c":
-                Create(args[1],args[2],args[3]);
+                Create(args[1], args[2], args[3]);
                 break;
             case "-u":
-                Update(args[1],args[2],args[3],args[4]);
+                Update(args[1], args[2], args[3], args[4]);
                 break;
             case "-d":
                 Delite(args[1]);
                 break;
             case "-i":
                 input(args[1]);
-
+            default:
         }
 
     }
 
     public static void Create(String name, String sex, String date) throws ParseException {
         Date newFormat = new SimpleDateFormat("dd/MM/yyyy").parse(date);
-        allPeople.add(Person.createMale(name,sex,date))
+        allPeople.add(sex.equals("м") ? Person.createMale(name, newFormat) : Person.createFemale(name, newFormat));
+        System.out.println(allPeople.size() - 1);
     }
-    public static void Update(String id,String name, String sex, String date) {
 
+    public static void Update(String id, String name, String sex, String date) throws ParseException {
+        Date newFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH).parse(date);
+        Person person = allPeople.get(Integer.parseInt(id));
+        person.setBirthDay(newFormat);
+        person.setName(name);
+        person.setSex(sex.equals("м") ? Sex.MALE : Sex.FEMALE);
     }
+
     public static void Delite(String id) {
-
+        //логическое удаление, удалять именно строку из списка не нужно.
+        Person person = allPeople.get(Integer.parseInt(id));
+        person.setBirthDay(null);
+        person.setSex(null);
+        person.setName(null);
     }
-    public static void input(String id) {
 
+    public static void input(String id) throws ParseException {
+        Person person = allPeople.get(Integer.parseInt(id));
+        SimpleDateFormat date = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
+        String gender = person.getSex() == Sex.MALE ? "м" : "ж";
+        System.out.println(person.getName() + " " + gender +" " + date.format(person.getBirthDay()));
     }
 }

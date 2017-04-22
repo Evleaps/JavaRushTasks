@@ -1,0 +1,6 @@
+package com.javarush.task.task17Synchronized_ОкруглениеЧисел_Volatile_CompareTo_CRUD.task1721ЧтениеИзаписьУдалениеОдинакогоКонтентаВФайлах;
+
+import java.io.IOException;
+
+public class CorruptedDataException extends IOException {
+}

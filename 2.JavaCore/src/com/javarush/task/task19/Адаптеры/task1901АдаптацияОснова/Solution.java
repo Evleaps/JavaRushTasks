@@ -1,0 +1,66 @@
+package com.javarush.task.task19.Адаптеры.task1901АдаптацияОснова;
+
+/* 
+TableAdapter
+Измени класс TableAdapter так, чтобы он адаптировал ATable к BTable.
+Метод getHeaderText должен возвращать такую строку «[username] : tablename«.
+
+Пример, «[Amigo] : DashboardTable«.
+
+
+Требования:
+1. Класс Solution должен содержать public static интерфейс ATable.
+2. Класс Solution должен содержать public static интерфейс BTable.
+3. Класс Solution должен содержать public static класс TableAdapter.
+4. Класс TableAdapter должен реализовывать интерфейс BTable.
+5. Класс TableAdapter должен содержать приватное поле aTable типа ATable.
+6. Класс TableAdapter должен содержать конструктор с параметром ATable.
+7. Класс TableAdapter должен переопределять метод getHeaderText согласно заданию.
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        //тут определен ATable
+        ATable aTable = new ATable() {
+            @Override
+            public String getCurrentUserName() {
+                return "Amigo";
+            }
+
+            @Override
+            public String getTableName() {
+                return "DashboardTable";
+            }
+        };
+
+        BTable table = new TableAdapter(aTable);
+        System.out.println(table.getHeaderText());
+    }
+
+
+
+    //Адаптировал ATable к BTable, теперь метод getHeaderText умеет все, что умеет ATable
+    public static class TableAdapter implements BTable{
+        private ATable aTable;
+
+        public TableAdapter(ATable table) {
+            this.aTable = table;
+        }
+
+        @Override
+        public String getHeaderText() {
+            return "[" + aTable.getCurrentUserName() + "] : " + aTable.getTableName();
+        }
+    }
+
+
+
+    public interface ATable {
+        String getCurrentUserName();
+        String getTableName();
+    }
+
+    public interface BTable {
+        String getHeaderText();
+    }
+}

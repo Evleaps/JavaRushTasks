@@ -1,4 +1,4 @@
-package com.javarush.task.task19.task1907;
+package com.javarush.task.task19.task1907СколькоРазВстречаетсяСлово;
 
 /* 
 Считаем слово
@@ -24,10 +24,10 @@ import java.io.InputStreamReader;
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        final String a = bufferedReader.readLine();
+        final String file = bufferedReader.readLine();
         int count = 0;
 
-        BufferedReader fileReader = new BufferedReader(new FileReader(a));
+        BufferedReader fileReader = new BufferedReader(new FileReader(file));
         while (fileReader.ready())
         {
             String[] s = fileReader.readLine().split("[., !?;:-]");

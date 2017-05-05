@@ -60,16 +60,15 @@ public class Solution {
         int operand1 = stackOperand.pop();
 
         if (operator.equals("+"))
-            stackOperand.push(operand1 +  operand2);
+            stackOperand.push(operand1 + operand2);
         else {
             if (operator.equals("-"))
-                stackOperand.push(operand1 -  operand2);
+                stackOperand.push(operand1 - operand2);
             else {
                 if (operator.equals("*"))
-                    stackOperand.push(operand1 *  operand2);
+                    stackOperand.push(operand1 * operand2);
             }
         }
-
         System.out.println(outputStream.toString().replaceAll("\\p{Cntrl}", "") + stackOperand.peek().toString());
     }
 

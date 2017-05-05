@@ -38,12 +38,9 @@ public class Solution {
             * А вот утюг один, и в синхронизации мы должны поставить все общие элементы.
             * В нашем случае, весь класс УТЮГ*/
             synchronized (Iron.class) {
-            Iron iron = takeIron();
-
-            Clothes clothes = takeClothes();
-
+                Iron iron = takeIron();
+                Clothes clothes = takeClothes();
                 ironing(iron, clothes);
-
                 returnIron();
             }
 

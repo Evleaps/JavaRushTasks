@@ -2,6 +2,7 @@ package com.javarush.task.task19.task1927;
 
 /* 
 Контекстная реклама
+
 */
 
 public class Solution {

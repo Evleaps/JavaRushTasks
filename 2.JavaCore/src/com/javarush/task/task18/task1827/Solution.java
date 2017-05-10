@@ -35,14 +35,32 @@ id productName price quantity
 6. Созданные для файлов потоки должны быть закрыты.
 */
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String name = reader.readLine();
+        File file = new File(reader.readLine());
+        reader.close();
 
+       // BufferedReader paramStream = new BufferedReader(new FileReader(args[0]));
+        BufferedReader inStream = new BufferedReader(new FileReader(file));
+        BufferedWriter outStream = new BufferedWriter((new FileWriter(file)));
 
+        int id = 0;
+        while (inStream.ready()) {
+           int strId = Integer.parseInt(inStream.readLine().split(" ")[0]);
+           if (strId>id) id = strId;
+        }
+
+        String param = id++ + "";
+        try {
+
+            for (int i = 0; i < args.length; i++) {
+                param += args[i];
+            }
+            outStream.write(param);
+
+        }catch (Exception e) {}
     }
 }

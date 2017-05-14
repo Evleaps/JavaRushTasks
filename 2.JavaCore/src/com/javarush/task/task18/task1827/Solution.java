@@ -36,31 +36,30 @@ id productName price quantity
 */
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        File file = new File(reader.readLine());
-        reader.close();
-
-       // BufferedReader paramStream = new BufferedReader(new FileReader(args[0]));
+        String file = reader.readLine();
         BufferedReader inStream = new BufferedReader(new FileReader(file));
-        BufferedWriter outStream = new BufferedWriter((new FileWriter(file)));
 
         int id = 0;
         while (inStream.ready()) {
-           int strId = Integer.parseInt(inStream.readLine().split(" ")[0]);
-           if (strId>id) id = strId;
+            int strId;
+            try {
+                 strId = Integer.parseInt(inStream.readLine().substring(0, 8).trim());
+            }catch (StringIndexOutOfBoundsException e) {
+                break;
+            }
+           if (strId > id) id = strId;
         }
 
-        String param = id++ + "";
-        try {
-
-            for (int i = 0; i < args.length; i++) {
-                param += args[i];
-            }
-            outStream.write(param);
-
-        }catch (Exception e) {}
+        String param =  "\n" + String.format("%-8s%-30s%-8s%-4s", id+1 + "", args[1], args[2], args[3]);
+        Files.write(Paths.get(file),param.getBytes(), StandardOpenOption.APPEND);
+        reader.close();
+        inStream.close();
     }
 }

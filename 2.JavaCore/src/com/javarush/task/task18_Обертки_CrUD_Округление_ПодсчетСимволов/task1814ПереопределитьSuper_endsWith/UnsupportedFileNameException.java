@@ -1,0 +1,4 @@
+package com.javarush.task.task18_Обертки_CrUD_Округление_ПодсчетСимволов.task1814ПереопределитьSuper_endsWith;
+
+public class UnsupportedFileNameException extends Exception {
+}

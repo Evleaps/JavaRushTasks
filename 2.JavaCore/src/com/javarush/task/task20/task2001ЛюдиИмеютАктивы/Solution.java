@@ -72,7 +72,6 @@ public class Solution {
 
             if (name != null ? !name.equals(human.name) : human.name != null) return false;
             return assets != null ? assets.equals(human.assets) : human.assets == null;
-
         }
 
         @Override

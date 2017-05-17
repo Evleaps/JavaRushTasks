@@ -1,0 +1,5 @@
+#
+#Wed May 17 20:51:00 MSK 2017
+inga=2
+roma=3
+ira=1

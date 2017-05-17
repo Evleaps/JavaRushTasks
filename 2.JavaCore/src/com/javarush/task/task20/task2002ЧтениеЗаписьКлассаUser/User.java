@@ -1,4 +1,4 @@
-package com.javarush.task.task20.task2002;
+package com.javarush.task.task20.task2002ЧтениеЗаписьКлассаUser;
 
 import java.util.Date;
 

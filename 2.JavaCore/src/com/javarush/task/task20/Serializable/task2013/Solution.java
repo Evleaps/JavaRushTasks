@@ -1,4 +1,4 @@
-package com.javarush.task.task20.task2013;
+package com.javarush.task.task20.Serializable.task2013;
 
 import java.io.Externalizable;
 import java.io.IOException;

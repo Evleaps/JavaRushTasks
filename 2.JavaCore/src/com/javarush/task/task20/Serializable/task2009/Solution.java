@@ -1,4 +1,4 @@
-package com.javarush.task.task20.task2009;
+package com.javarush.task.task20.Serializable.task2009;
 
 import java.io.Serializable;
 

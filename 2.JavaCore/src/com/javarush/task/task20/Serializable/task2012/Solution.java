@@ -1,4 +1,4 @@
-package com.javarush.task.task20.task2012;
+package com.javarush.task.task20.Serializable.task2012;
 
 import java.io.*;
 

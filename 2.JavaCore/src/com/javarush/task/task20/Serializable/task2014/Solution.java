@@ -1,4 +1,4 @@
-package com.javarush.task.task20.task2014;
+package com.javarush.task.task20.Serializable.task2014;
 
 import java.io.*;
 import java.text.SimpleDateFormat;

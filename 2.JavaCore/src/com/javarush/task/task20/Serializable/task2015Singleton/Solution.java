@@ -1,4 +1,4 @@
-package com.javarush.task.task20.task2015;
+package com.javarush.task.task20.Serializable.task2015Singleton;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

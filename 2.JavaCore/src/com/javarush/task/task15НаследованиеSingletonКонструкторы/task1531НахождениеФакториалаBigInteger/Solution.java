@@ -25,19 +25,22 @@ import java.math.BigInteger;
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-        int input = Integer.parseInt(reader.readLine());
+        long input = Integer.parseInt(reader.readLine());
         reader.close();
-
-        System.out.println(factorial(input));
+        System.out.println(factorialRecursion(BigInteger.valueOf(input)));
+        System.out.println(factorialNotRecursion(input));
+        System.out.println(factorialRecursion(BigInteger.valueOf(input)).equals(factorialNotRecursion(input)));
     }
 
-    public static String factorial(int n) {
-        //add your code here
-        if (n<0) return "0";
-        BigInteger ret = BigInteger.ONE;
-        for (int i = 1; i <= n; ++i) ret = ret.multiply(BigInteger.valueOf(i));
-        return ret.toString();
+    public static BigInteger factorialRecursion(BigInteger n) {
+        if (n == BigInteger.ZERO) return BigInteger.ONE;
+        return n.multiply(factorialRecursion(n.subtract(BigInteger.ONE)));
+    }
 
+    public static BigInteger factorialNotRecursion(long n) {
+        BigInteger reg = BigInteger.ONE;
+        if (n == 0) return reg;
+        for (int i = 1; i <= n; i++) reg = reg.multiply(BigInteger.valueOf(i));
+        return reg;
     }
 }

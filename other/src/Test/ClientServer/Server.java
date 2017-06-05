@@ -24,7 +24,7 @@ public class Server implements Runnable {
                 connection = server.accept ();//возвращает сокет который получил
                 output = new ObjectOutputStream (connection.getOutputStream ( )); //записываем на сервер
                 input = new ObjectInputStream (connection.getInputStream ( )); //читаем с сервера
-                output.writeObject ("Вы прислали" + (String)input.readObject ());
+                output.writeObject ("Вы прислали " + (String)input.readObject ());
             }
         } catch (UnknownHostException e) {
             e.printStackTrace ( );

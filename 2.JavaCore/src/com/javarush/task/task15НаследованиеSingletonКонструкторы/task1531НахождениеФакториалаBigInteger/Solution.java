@@ -24,14 +24,16 @@ import java.math.BigInteger;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
+        //ввели значение и закрыли поток чтения с клавы
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         long input = Integer.parseInt(reader.readLine());
         reader.close();
+
         System.out.println(factorialRecursion(BigInteger.valueOf(input)));
         System.out.println(factorialNotRecursion(input));
         System.out.println(factorialRecursion(BigInteger.valueOf(input)).equals(factorialNotRecursion(input)));
     }
-
+//тут рекурсивное решение, BigInteger нужен потому, что int слишком быстро переполняется
     public static BigInteger factorialRecursion(BigInteger n) {
         if (n == BigInteger.ZERO) return BigInteger.ONE;
         return n.multiply(factorialRecursion(n.subtract(BigInteger.ONE)));

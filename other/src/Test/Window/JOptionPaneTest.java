@@ -183,7 +183,7 @@ public class JOptionPaneTest extends JFrame
                         JOptionPane.QUESTION_MESSAGE,
                         icon, drink, drink[0]);
                 // Диалоговое окно вывода сообщения
-                JOptionPane.showMessageDialog(JOptionPaneTest.this, result);
+                JOptionPane.showMessageDialog(JOptionPaneTest.this, result); //выведет ответ
             }
         });
     }

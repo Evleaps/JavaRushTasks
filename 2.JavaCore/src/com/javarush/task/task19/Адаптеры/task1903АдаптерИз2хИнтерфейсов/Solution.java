@@ -13,7 +13,7 @@ CA Canada
 
 
 Требования:
-1. Класс Solution должен содержать public static поле countries типа Map.
+1. Класс Solution должен содержать public static поле countries типа MapClass.
 2. В статическом блоке класса Solution инициализируй поле countries тестовыми данными согласно заданию.
 3. Класс IncomeDataAdapter должен реализовывать интерфейсы Customer и Contact.
 4. Класс IncomeDataAdapter должен содержать приватное поле data типа IncomeData.

@@ -122,9 +122,9 @@ public void run() {
                 }
             //сортировка по значениям по убыванию
                 List list = new ArrayList(map.entrySet());
-                Collections.sort(list, new Comparator<Map.Entry<Character, Integer>>() {
+                Collections.sort(list, new Comparator<MapClass.Entry<Character, Integer>>() {
                     @Override
-                    public int compare(Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2) {
+                    public int compare(MapClass.Entry<Character, Integer> o1, MapClass.Entry<Character, Integer> o2) {
                         return o2.getValue() - o1.getValue();//по убыванию
                     }
                 });

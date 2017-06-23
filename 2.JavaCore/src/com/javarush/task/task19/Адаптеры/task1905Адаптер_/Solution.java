@@ -15,7 +15,7 @@ CA Canada
 
 
 Требования:
-1. Класс Solution должен содержать public static поле countries типа Map.
+1. Класс Solution должен содержать public static поле countries типа MapClass.
 2. В статическом блоке класса Solution инициализируй поле countries тестовыми данными согласно заданию.
 3. Класс Solution должен содержать интерфейс RowItem.
 4. Класс Solution должен содержать интерфейс Contact.

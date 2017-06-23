@@ -11,14 +11,14 @@ ApplicationContext будет доступен множеству нитей.
 
 Требования:
 1. Класс ApplicationContext должен быть абстрактным.
-2. Класс ApplicationContext должен содержать private поле container типа Map.
+2. Класс ApplicationContext должен содержать private поле container типа MapClass.
 3. В getByName(String name), если необходимо, используй synchronized.
 4. В removeByName(String name), если необходимо, используй synchronized.
 */
 
 public  abstract  class ApplicationContext<GenericsBean extends Bean> {
     private Map<String, GenericsBean> container = new HashMap<String, GenericsBean>();
-    //Map<Name, some class implemented Bean interface>
+    //MapClass<Name, some class implemented Bean interface>
 
 
     protected  ApplicationContext() {
